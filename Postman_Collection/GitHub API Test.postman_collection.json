@@ -1,0 +1,118 @@
+{
+	"info": {
+		"_postman_id": "6855c503-9e05-4207-b196-c5c670615b73",
+		"name": "GitHub API Test",
+		"description": "StartFragmentPruebas para el assignment de Data Source API AnalystEndFragment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46104410"
+	},
+	"item": [
+		{
+			"name": "Repositories",
+			"item": [
+				{
+					"name": "Search Repositories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "X-GitHub-Api-Version",
+								"value": "{{api_version}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.github+json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/search/repositories?q=python&sort=stars&order=desc\n",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"search",
+								"repositories"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "python"
+								},
+								{
+									"key": "sort",
+									"value": "stars"
+								},
+								{
+									"key": "order",
+									"value": "desc\n"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Commits",
+			"item": [
+				{
+					"name": "Get Commits - Flask",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							},
+							{
+								"key": "X-GitHub-Api-Version",
+								"value": "{{api_version}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/vnd.github+json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/repos/pallets/flask/commits",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"repos",
+								"pallets",
+								"flask",
+								"commits"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Contents",
+			"item": [
+				{
+					"name": "Get README - Flask",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
